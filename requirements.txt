@@ -1,0 +1,12 @@
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+missingno
+lightgbm
+streamlit
+Flask
+scipy
+datetime
+pickle
