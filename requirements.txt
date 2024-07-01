@@ -9,4 +9,4 @@ streamlit
 Flask
 scipy
 datetime
-pickle
+
