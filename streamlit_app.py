@@ -26,13 +26,13 @@ Embarked = st.selectbox('Embarked (Biniş Noktası)', ['C', 'Q', 'S'])
 Sex = 1 if Sex == 'male' else 0
 
 # Biniş Noktasını sayısal değere çevirme
-Embarked_C = 1 if Embarked == 'C' else 0
-Embarked_Q = 1 if Embarked == 'Q' else 0
-Embarked_S = 1 if Embarked == 'S' else 0
+# Biniş Noktasını sayısal değere çevirme
+map_embarked = {"S": 0, "C": 1, "Q": 2}
+Embarked = map_embarked[Embarked]
 
 # Tahmin butonu
 if st.button('Predict'):
-    input_data = np.array([[Pclass, Sex, SibSp, Parch, Fare, Embarked_C, Embarked_Q, Embarked_S]])
+    input_data = np.array([[Pclass, Sex, SibSp, Parch, Fare, Embarked]])
     prediction = model.predict(input_data)
     prediction_prob = model.predict_proba(input_data)
     st.write(f'Hayatta kalma olasılığınız: %{prediction_prob[0][1] * 100:.2f}')
